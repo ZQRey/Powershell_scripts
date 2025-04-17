@@ -4,8 +4,8 @@ $msiPath = "\\fileserver\SOFTWARE\commfort_client.msi"
 # Путь установки по умолчанию
 $installDir = "C:\Program Files (x86)\CommFort"
 
-$securePass = ConvertTo-SecureString "N@Kreste2" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential("pol4\zqrey", $securePass)
+$securePass = ConvertTo-SecureString "Password" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential("pol4\name", $securePass)
 
 Start-Process msiexec.exe -Credential $cred -ArgumentList "/i `"$msiPath`" /passive /norestart" -Wait
 
